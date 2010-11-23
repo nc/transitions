@@ -51,7 +51,9 @@ module Transitions
         end
 
         record.current_state(@name, new_state, persist)
-        record.send(@events[event].success) if @events[event].success
+        puts "Transisitons: Machine: fire_event - about to send success signal to #{@events[event].success}"
+        vv = record.send(@events[event].success) if @events[event].success
+        puts "Transisitons: Machine: fire_event - sent success signal returned #{vv}"
         true
       else
         if record.respond_to?(event_failed_callback)
