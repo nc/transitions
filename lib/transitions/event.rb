@@ -39,7 +39,7 @@ module Transitions
     end
 
     def fire(obj, to_state = nil, *args)
-      puts "Transitions: Event#fire(#{obj}, #{to_state}, #{args})"
+      puts "Transitions: Event#fire(#{obj}, #{to_state})"
       
       transitions = @transitions.select { |t| t.from == obj.current_state(@machine ? @machine.name : nil) }
       raise InvalidTransition if transitions.size == 0
