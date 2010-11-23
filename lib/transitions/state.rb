@@ -41,6 +41,7 @@ module Transitions
     end
 
     def call_action(action, record)
+      Rails.logger.debug "Transitions: call_action(#{action}, #{record})"
       action = @options[action]
       case action
       when Symbol, String
