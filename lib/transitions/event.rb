@@ -39,7 +39,7 @@ module Transitions
     end
 
     def fire(obj, to_state = nil, *args)
-      Rails.logger.debug "Transitions: Event#fire(#{obj}, #{to_state}, #{*args})"
+      Rails.logger.debug "Transitions: Event#fire(#{obj}, #{to_state}, #{args})"
       
       transitions = @transitions.select { |t| t.from == obj.current_state(@machine ? @machine.name : nil) }
       raise InvalidTransition if transitions.size == 0

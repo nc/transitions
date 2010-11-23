@@ -43,7 +43,7 @@ module Transitions
     end
 
     def execute(obj, *args)
-      Rails.logger.debug "Transitions: StateTransition#execute(#{obj}, #{*args})"
+      Rails.logger.debug "Transitions: StateTransition#execute(#{obj}, #{args})"
       
       case @on_transition
       when Symbol, String
