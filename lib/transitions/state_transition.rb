@@ -30,7 +30,7 @@ module Transitions
     end
 
     def perform(obj)
-      Rails.logger.debug "Transitions: StateTransition#perform(#{obj})"
+      puts "Transitions: StateTransition#perform(#{obj})"
       
       case @guard
       when Symbol, String
@@ -43,7 +43,7 @@ module Transitions
     end
 
     def execute(obj, *args)
-      Rails.logger.debug "Transitions: StateTransition#execute(#{obj}, #{args})"
+      puts "Transitions: StateTransition#execute(#{obj}, #{args})"
       
       case @on_transition
       when Symbol, String
